@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Process your image</title>
+
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="../static/jumbotron-narrow.css" rel="stylesheet" />
+
+    <link href="../static/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right"></ul>
+        </nav>
+        <h3 class="text-muted">Process your image</h3>
+      </div>
+
+      <div class="jumbotron">
+        <div id="image-container">
+          <img src=" {{image_name}} " style="max-width: 560px" />
+        </div>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-3">
+          <form
+            id="remove-backg"
+            action=" {{ url_for('removebg') }}"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <button id="btnRembg" class="btn btn-lg btn-success" type="submit">
+              Remove Background
+            </button>
+            <input
+              type="text"
+              class="hidden"
+              name="fileName"
+              value="{{fileName}}"
+              required
+            />
+            <input
+              type="text"
+              class="hidden"
+              name="image"
+              value="{{ image_name }}"
+            />
+          </form>
+        </div>
+
+        <div class="col-lg-3">
+          <form
+            id="gray-scale"
+            action=" {{ url_for('grayscale') }}"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <button id="btnGray" class="btn btn-lg btn-success" type="submit">
+              GrayScale
+            </button>
+            <input
+              type="text"
+              class="hidden"
+              name="fileName"
+              value="{{fileName}}"
+              required
+            />
+            <input
+              type="text"
+              class="hidden"
+              name="image"
+              value="{{ image_name }}"
+            />
+          </form>
+        </div>
+
+        <div class="col-lg-3">
+          <form
+            id="sketch"
+            action=" {{ url_for('sketch') }}"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <button id="btnSketch" class="btn btn-lg btn-success" type="submit">
+              Sketch
+            </button>
+            <input
+              type="text"
+              class="hidden"
+              name="fileName"
+              value="{{fileName}}"
+              required
+            />
+            <input
+              type="text"
+              class="hidden"
+              name="image"
+              value="{{ image_name }}"
+            />
+          </form>
+        </div>
+
+        <div class="col-lg-3">
+          <form
+            id="pencilSketch"
+            action=" {{ url_for('pencilsketch') }}"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <button
+              id="btnPencilSketch"
+              class="btn btn-lg btn-success"
+              type="submit"
+            >
+              Pencil Sketch
+            </button>
+            <input
+              type="text"
+              class="hidden"
+              name="fileName"
+              value="{{fileName}}"
+              required
+            />
+            <input
+              type="text"
+              class="hidden"
+              name="image"
+              value="{{ image_name }}"
+            />
+          </form>
+        </div>
+      </div>
+      <br />
+      <div class="row marketing">
+        <div class="col-lg-3">
+          <form
+            id="square"
+            action=" {{ url_for('square') }}"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <button id="btnSqur" class="btn btn-lg btn-success" type="submit">
+              Make Square
+            </button>
+            <input
+              type="text"
+              class="hidden"
+              name="fileName"
+              value="{{fileName}}"
+              required
+            />
+            <input
+              type="text"
+              class="hidden"
+              name="image"
+              value="{{ image_name }}"
+            />
+          </form>
+        </div>
+
+        <div class="col-lg-3">
+          <form
+            id="cartoonize"
+            action=" {{ url_for('cartoon') }}"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <button
+              id="btnCartoon"
+              class="btn btn-lg btn-success"
+              type="submit"
+            >
+              Cartoon
+            </button>
+            <input
+              type="text"
+              class="hidden"
+              name="fileName"
+              value="{{fileName}}"
+              required
+            />
+            <input
+              type="text"
+              class="hidden"
+              name="image"
+              value="{{ image_name }}"
+            />
+          </form>
+        </div>
+
+        <div class="col-lg-3">
+          <form
+            id="colorPenSketch"
+            action=" {{ url_for('colorPencilSketch') }}"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <button id="btnMoon" class="btn btn-lg btn-success" type="submit">
+              Color Pencil Sketch
+            </button>
+            <input
+              type="text"
+              class="hidden"
+              name="fileName"
+              value="{{fileName}}"
+              required
+            />
+            <input
+              type="text"
+              class="hidden"
+              name="image"
+              value="{{ image_name }}"
+            />
+          </form>
+        </div>
+
+        <div class="col-lg-3">
+          <form
+            id="sephia"
+            action=" {{ url_for('sephia') }}"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <button id="btnSephia" class="btn btn-lg btn-success" type="submit">
+              Sephia
+            </button>
+            <input
+              type="text"
+              class="hidden"
+              name="fileName"
+              value="{{fileName}}"
+              required
+            />
+            <input
+              type="text"
+              class="hidden"
+              name="image"
+              value="{{ image_name }}"
+            />
+          </form>
+        </div>
+      </div>
+      <br />
+      <div class="row marketing">
+        <div class="col-lg-3">
+          <form
+            id="hudson"
+            action=" {{ url_for('hudson') }}"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <button id="btnHudson" class="btn btn-lg btn-success" type="submit">
+              Hudson
+            </button>
+            <input
+              type="text"
+              class="hidden"
+              name="fileName"
+              value="{{fileName}}"
+              required
+            />
+            <input
+              type="text"
+              class="hidden"
+              name="image"
+              value="{{ image_name }}"
+            />
+          </form>
+        </div>
+
+        <div class="col-lg-3">
+          <form
+            id="Moon"
+            action=" {{ url_for('moon') }}"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <button id="btnMoon" class="btn btn-lg btn-success" type="submit">
+              Moon
+            </button>
+            <input
+              type="text"
+              class="hidden"
+              name="fileName"
+              value="{{fileName}}"
+              required
+            />
+            <input
+              type="text"
+              class="hidden"
+              name="image"
+              value="{{ image_name }}"
+            />
+          </form>
+        </div>
+
+        <div class="col-lg-3">
+          <form
+            id="toaster"
+            action=" {{ url_for('toaster') }}"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <button
+              id="btnToaster"
+              class="btn btn-lg btn-success"
+              type="submit"
+            >
+              Toaster
+            </button>
+            <input
+              type="text"
+              class="hidden"
+              name="fileName"
+              value="{{fileName}}"
+              required
+            />
+            <input
+              type="text"
+              class="hidden"
+              name="image"
+              value="{{ image_name }}"
+            />
+          </form>
+        </div>
+
+        
+      </div>
+      <br />
+      <footer class="footer">
+        <p>&copy; Using Python, Flask and PIL.</p>
+      </footer>
+    </div>
+  </body>
+</html>
